@@ -14,12 +14,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://qr-code-front-end-917n.vercel.app/'] 
-    : ['http://localhost:3000'],
+  origin: '*', // هذا سيسمح بالطلبات من أي مصدر
   credentials: true
-}));
-
+} ));
 // توصيل قاعدة البيانات MongoDB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/changtoqr_db')
   .then(() => {
