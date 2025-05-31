@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://changtoqr.vercel.app'] 
+    ? ['https://qr-code-front-end-917n.vercel.app/'] 
     : ['http://localhost:3000'],
   credentials: true
 }));
